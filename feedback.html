@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f6f2">
+  <meta name="description" content="Share feedback and suggestions for BK FLOATYDANGLES.">
+  <title>Feedback — BK FLOATYDANGLES</title>
+  <style>
+    :root {
+  --page: #f6f6f2;
+  --surface: #ffffff;
+  --soft: #e8eddf;
+  --ink: #171914;
+  --muted: #666a60;
+  --line: #dfe2d8;
+  --accent: #c5f36b;
+
+  --lavender: #eee8fa;
+  --peach: #fbe8dc;
+  --mint: #e1f1e5;
+  --blue: #e5edf9;
+}
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      background:var(--page);
+      color:var(--ink);
+      font-family:"Segoe UI",Arial,sans-serif;
+    }
+    a { color:inherit; }
+    .wrap { width:min(900px,calc(100% - 36px));margin:auto; }
+    header {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:22px 0;border-bottom:1px solid var(--line);
+    }
+    .brand { font-weight:900;text-decoration:none;letter-spacing:-.04em; }
+    .back { color:var(--muted);font-size:13px;text-decoration:none; }
+    main { padding:65px 0 85px; }
+    .eyebrow {
+      color:var(--muted);font-size:11px;font-weight:800;
+      letter-spacing:.13em;text-transform:uppercase;
+    }
+    h1 {
+      font-size:clamp(42px,8vw,72px);letter-spacing:-.075em;
+      line-height:.98;margin:18px 0;
+    }
+    .intro {
+      max-width:570px;color:var(--muted);
+      line-height:1.8;font-size:14px;
+    }
+    .panel {
+      margin-top:35px;background:var(--surface);
+      border:1px solid var(--line);padding:30px;
+    }
+    label { display:block;font-size:13px;font-weight:700;margin-bottom:9px; }
+    input,textarea {
+      display:block;width:100%;padding:14px;
+      border:1px solid var(--line);border-radius:3px;
+      background:var(--page);color:var(--ink);
+      font:inherit;font-size:14px;outline-offset:3px;
+    }
+    textarea { min-height:170px;resize:vertical; }
+    .field { margin-bottom:23px; }
+    .hint { color:var(--muted);font-size:11px;margin-top:8px; }
+    .consent {
+      display:flex;gap:10px;align-items:flex-start;
+      color:var(--muted);font-size:12px;line-height:1.6;
+    }
+    .consent input { width:auto;margin-top:3px; }
+    button {
+      margin-top:24px;padding:15px 22px;
+      border:0;border-radius:3px;background:var(--accent);
+      color:var(--ink);font-weight:800;cursor:pointer;
+    }
+    button:disabled { opacity:.55;cursor:not-allowed; }
+    #status { margin-top:18px;font-size:13px;line-height:1.6; }
+    footer {
+      padding:25px 0;border-top:1px solid var(--line);
+      color:var(--muted);font-size:11px;
+    }
+    @media(max-width:600px) {
+      main { padding:45px 0 60px; }
+      .panel { padding:20px; }
+    }
+    /* Colourful background */
+body {
+  background:
+    radial-gradient(ellipse at 8% 15%, #eee8fa 0, transparent 35%),
+    radial-gradient(ellipse at 92% 35%, #fbe8dc 0, transparent 32%),
+    radial-gradient(ellipse at 50% 95%, #e1f1e5 0, transparent 35%),
+    var(--page);
+}
+
+/* Premium feedback card */
+.panel {
+  border-radius: 12px;
+  border-top: 5px solid #c5f36b;
+  box-shadow: 0 18px 50px rgba(23,25,20,.06);
+}
+
+/* Colourful input focus */
+input:focus,
+textarea:focus {
+  border-color: #8da95d;
+  background: #fbfff5;
+}
+
+/* More attractive button */
+button {
+  background: linear-gradient(110deg, #c5f36b, #d9f6a4);
+  border-radius: 6px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(110,145,65,.18);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #8da95d;
+  outline-offset: 3px;
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html">BK FLOATYDANGLES</a>
+      <a class="back" href="index.html">← Back to home</a>
+    </header>
+
+    <main>
+      <div class="eyebrow">Your thoughts matter</div>
+      <h1>Help us make<br>it better.</h1>
+      <p class="intro">
+        Share your suggestions, report a problem, or tell us
+        what you enjoy about BK FLOATYDANGLES.
+        Your feedback helps guide future improvements.
+      </p>
+
+      <form class="panel" id="feedbackForm">
+        <div class="field">
+          <label for="email">Email address (optional)</label>
+          <input id="email" type="email" maxlength="254"
+            autocomplete="email" placeholder="you@example.com">
+          <p class="hint">Only provide an email if you'd like a reply.</p>
+        </div>
+
+        <div class="field">
+          <label for="message">Your feedback</label>
+          <textarea id="message" required minlength="10"
+            maxlength="1000" placeholder="Tell us what you think..."></textarea>
+          <p class="hint">10–1000 characters.</p>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="privacyConsent" required>
+          <span>I understand that my feedback will be stored to help improve the app. If I provide my email, it may be used to reply to my feedback. See the <a href="privacy.html">Privacy Policy</a>.</span>
+        </label>
+
+        <button id="submitButton" type="submit">Send feedback →</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <footer>BK FLOATYDANGLES · Created by Balakrishna</footer>
+  </div>
+
+  <script type="module" src="js/feedback.js"></script>
+</body>
+</html>
