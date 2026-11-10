@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f6f6f2">
-  <meta name="description" content="BK FLOATYDANGLES — playful floating charms for your Windows desktop.">
+  <meta name="description" content="BK FLOATYDANGLES — free floating charms for your Windows desktop. No subscription or purchase required.">
   <title>BK FLOATYDANGLES — Your desktop. Your kind of fun.</title>
 
   <style>
@@ -16,6 +17,8 @@
       --muted: #666a60;
       --line: #dfe2d8;
       --accent: #c5f36b;
+      --lavender: #eee8fa;
+      --mint: #e1f1e5;
     }
 
     * { box-sizing: border-box; }
@@ -30,7 +33,10 @@
       letter-spacing: -.01em;
     }
 
-    a { color: inherit; -webkit-tap-highlight-color: transparent; }
+    a {
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     .wrap {
       width: min(1240px, calc(100% - 64px));
@@ -88,16 +94,19 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
     }
 
     .nav-links > a:not(.pill) {
       color: var(--muted);
       text-decoration: none;
       font-size: 12px;
+      font-weight: 650;
     }
 
-    .nav-links > a:not(.pill):hover { color: var(--ink); }
+    .nav-links > a:not(.pill):hover {
+      color: var(--ink);
+    }
 
     .pill {
       display: inline-flex;
@@ -106,7 +115,7 @@
       gap: 8px;
       padding: 15px 20px;
       border: 1px solid transparent;
-      border-radius: 4px;
+      border-radius: 5px;
       background: var(--accent);
       color: var(--ink);
       text-decoration: none;
@@ -119,6 +128,21 @@
     .pill:hover {
       transform: translateY(-2px);
       filter: brightness(.96);
+    }
+
+    .nav-links > a.feedback-nav {
+      padding: 14px 24px;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: white;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links > a.feedback-nav:hover {
+      background: var(--soft);
     }
 
     .hero {
@@ -164,6 +188,29 @@
       line-height: 1.8;
     }
 
+    .free-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 17px;
+      padding: 11px 15px;
+      border: 1px solid #d6e6b9;
+      border-radius: 30px;
+      background: #edf5df;
+      color: #344b20;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .free-note span {
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -195,6 +242,8 @@
       margin-right: 7px;
     }
 
+    /* Hero charm preview */
+
     .stage {
       position: relative;
       min-height: 450px;
@@ -202,7 +251,7 @@
       place-items: center;
       overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 4px;
+      border-radius: 5px;
       background: var(--soft);
     }
 
@@ -224,7 +273,8 @@
       border-radius: 50%;
     }
 
-    .orbit::before, .orbit::after {
+    .orbit::before,
+    .orbit::after {
       content: "";
       position: absolute;
       border: 1px solid #a8bd8a;
@@ -234,12 +284,12 @@
     .orbit::before { inset: 22px; }
     .orbit::after { inset: 47px; }
 
-    .showcase-logo {
+    .sample-charm-image {
       position: relative;
       z-index: 1;
       display: block;
-      width: min(290px, 70%);
-      height: 290px;
+      width: min(100%, 340px);
+      height: 340px;
       object-fit: contain;
       filter: drop-shadow(0 18px 24px rgba(23,25,20,.13));
       animation: float 3.2s ease-in-out infinite alternate;
@@ -262,6 +312,8 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
+
+    /* General sections */
 
     .section {
       padding: 82px 0;
@@ -292,6 +344,8 @@
       line-height: 1.7;
     }
 
+    /* Thoughtful design section */
+
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -319,7 +373,10 @@
       font-size: 20px;
     }
 
-    .feature h3 { margin: 21px 0 9px; font-size: 15px; }
+    .feature h3 {
+      margin: 21px 0 9px;
+      font-size: 15px;
+    }
 
     .feature p {
       margin: 0;
@@ -328,20 +385,51 @@
       line-height: 1.7;
     }
 
+    .free-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .free-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--lavender), #fff);
+    }
+
+    .free-card:nth-child(2) {
+      background: linear-gradient(135deg, var(--mint), #fff);
+    }
+
+    .free-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .free-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
     .download-panel {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 25px;
       padding: 46px;
-      border-radius: 4px;
+      border-radius: 5px;
       background: var(--ink);
       color: var(--page);
     }
 
     .download-panel .eyebrow,
     .download-panel p,
-    .download-panel .small-note { color: #c1c5b9; }
+    .download-panel .small-note {
+      color: #c1c5b9;
+    }
 
     .download-panel h2 {
       margin: 10px 0;
@@ -377,6 +465,7 @@
     }
 
     .faq-list { border-top: 1px solid var(--line); }
+
     details { border-bottom: 1px solid var(--line); }
 
     summary {
@@ -392,7 +481,14 @@
     }
 
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--muted); font-size: 23px; font-weight: 400; }
+
+    summary::after {
+      content: "+";
+      color: var(--muted);
+      font-size: 23px;
+      font-weight: 400;
+    }
+
     details[open] summary::after { content: "−"; }
 
     details p {
@@ -410,43 +506,142 @@
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 11px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .footer strong { color: var(--ink); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #8da95d;
+      outline-offset: 4px;
+    }
+
+    /* Tablet */
 
     @media (max-width: 900px) {
       .hero { gap: 28px; }
       .nav-links { gap: 16px; }
       .stage { min-height: 390px; }
-      .showcase-logo { width: min(240px, 70%); height: 240px; }
+      .sample-charm-image {
+        width: min(240px, 70%);
+        height: 240px;
+      }
       .orbit { width: 260px; height: 260px; }
     }
+
+    /* Mobile */
 
     @media (max-width: 760px) {
       .wrap { width: calc(100% - 32px); }
       .nav { padding: 18px 0; gap: 12px; }
       .brand { gap: 8px; font-size: 10px; letter-spacing: -.025em; }
       .brand-mark { width: 44px; height: 44px; flex-basis: 44px; }
-      .nav-links { gap: 10px; }
-      .nav-links > a:not(.pill) { display: none; }
-      .nav-links .pill { padding: 12px 13px; font-size: 11px; }
-      .hero { grid-template-columns: 1fr; padding: 56px 0 42px; gap: 28px; }
+      .nav-links { gap: 8px; }
+
+      .nav-links > a:not(.pill) {
+        display: none;
+      }
+
+      .nav-links > a.feedback-nav {
+        display: inline-flex;
+        padding: 12px 16px;
+        min-height: 42px;
+        font-size: 12px;
+      }
+
+      .nav-links .pill {
+        padding: 13px 17px;
+        font-size: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 56px 0 42px;
+        gap: 28px;
+      }
+
       h1 { font-size: clamp(48px, 14vw, 78px); }
       .hero-copy { font-size: 14px; }
       .stage { min-height: 320px; }
-      .showcase-logo { width: min(220px, 65%); height: 220px; }
+
+      .sample-charm-image {
+        width: min(220px, 65%);
+        height: 220px;
+      }
+
       .orbit { width: 235px; height: 235px; }
-      .charm-caption { left: 12px; right: 12px; bottom: 13px; font-size: 8px; }
+
+      .charm-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 13px;
+        font-size: 8px;
+      }
+
       .section { padding: 58px 0; }
-      .section-head { align-items: start; flex-direction: column; }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
       .features { grid-template-columns: 1fr; }
-      .feature { border-right: 0; border-bottom: 1px solid var(--line); padding: 24px 4px; }
+
+      .feature {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 24px 4px;
+      }
+
       .feature:last-child { border-bottom: 0; }
-      .download-panel { grid-template-columns: 1fr; padding: 28px 22px; }
+
+      .free-section { grid-template-columns: 1fr; }
+
+      .download-panel {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+      }
+
       .download-side { align-items: start; }
-      .faq-layout { grid-template-columns: 1fr; gap: 20px; }
+
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
       .footer { flex-direction: column; }
+    }
+
+    @media (max-width: 380px) {
+      .brand { font-size: 9px; }
+      .nav-links { gap: 6px; }
+
+      .nav-links > a.feedback-nav {
+        padding: 10px 11px;
+        font-size: 11px;
+      }
+
+      .nav-links .pill {
+        padding: 11px 12px;
+        font-size: 11px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -475,26 +670,38 @@
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#features">Features</a>
           <a href="#faq">FAQ</a>
-          <a class="pill"
-             href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/download/v1.0.0/BK.Floatydangles.Setup.1.0.0.exe"
-             download>Get the app ↓</a>
+          <a class="feedback-nav" href="feedback.html">Feedback</a>
+          <a class="pill" href="#download">Get the app ↓</a>
         </nav>
       </header>
+
+      <!-- HERO -->
 
       <section class="hero" id="top">
         <div>
           <div class="eyebrow">A tiny desktop companion</div>
+
           <h1>Your desktop.<br><span>Your kind of fun.</span></h1>
+
           <p class="hero-copy">
             Floating charms for your Windows desktop. A small detail
             that makes your everyday screen feel a little more like yours.
           </p>
+
+          <div class="free-note">
+            <span>✓</span>
+            Completely FREE · No subscription · No purchase required
+          </div>
+
           <div class="actions">
             <a class="pill"
-               href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/download/v1.0.0/BK.Floatydangles.Setup.1.0.0.exe"
-               download>Download for Windows ↓</a>
+               href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/download/v1.0.0/BK.Floatydangles.Setup.1.0.0.exe">
+              Download for Windows ↓
+            </a>
+
             <a class="text-link" href="#features">Explore features ↓</a>
           </div>
+
           <div class="meta">
             <span>Windows desktop</span>
             <span>Version 1.0.0</span>
@@ -502,16 +709,75 @@
           </div>
         </div>
 
-        <div class="stage" aria-label="BK FLOATYDANGLES logo showcase">
+        <div class="stage" aria-label="BK FLOATYDANGLES charm preview">
           <div class="stage-grid"></div>
           <div class="orbit"></div>
-          <img class="showcase-logo" src="assets/logo.png" alt="BK FLOATYDANGLES logo">
+
+          <img
+            class="sample-charm-image"
+            src="assets/sample-charm.png"
+            alt="A floating charm from BK FLOATYDANGLES"
+            width="1024"
+            height="1024">
+
           <div class="charm-caption">
             <span>BK / FLOATYDANGLES</span>
-            <span>Desktop object no. 001</span>
+            <span>A little desktop charm</span>
           </div>
         </div>
       </section>
+
+      <!-- THOUGHTFUL DESIGN / SAFETY INFORMATION -->
+
+      
+<!-- A LITTLE PEACE OF MIND -->
+
+<section class="section" id="safety">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Your desktop, your happy place</div>
+      <h2>Made with care.<br>Made for you.</h2>
+    </div>
+
+    <p class="section-intro">
+      Every little detail of BK FLOATYDANGLES is designed
+      to bring joy to your Windows desktop through a simple,
+      thoughtful and enjoyable experience.
+    </p>
+  </div>
+
+  <div class="features">
+    <article class="feature">
+      <div class="feature-icon">♡</div>
+      <h3>Created with care</h3>
+      <p>
+        Built with attention to detail, from the charm designs
+        to the way they move on your desktop.
+      </p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon">✿</div>
+      <h3>Simple and lightweight</h3>
+      <p>
+        Enjoy a little desktop personality without making
+        your everyday experience complicated.
+      </p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon">✓</div>
+      <h3>A straightforward experience</h3>
+      <p>
+        No account needed for the core experience.
+        Just install, explore the charms and enjoy your desktop.
+      </p>
+    </article>
+  </div>
+</section>
+
+
+      <!-- FEATURES -->
 
       <section class="section" id="features">
         <div class="section-head">
@@ -519,6 +785,7 @@
             <div class="eyebrow">Made for your screen</div>
             <h2>Small object.<br>Big personality.</h2>
           </div>
+
           <p class="section-intro">
             A desktop companion designed around playful details,
             simple controls, and movement that adds character
@@ -530,20 +797,68 @@
           <article class="feature">
             <div class="feature-icon">✿</div>
             <h3>Choose your charm</h3>
-            <p>Explore the available designs and switch to a favourite whenever you feel like a change.</p>
+            <p>
+              Explore the available designs and switch to a favourite
+              whenever you feel like a change.
+            </p>
           </article>
+
           <article class="feature">
             <div class="feature-icon">〰</div>
             <h3>Interactive movement</h3>
-            <p>Drag and position your charm, then enjoy its smooth hanging and swinging movement.</p>
+            <p>
+              Drag and position your charm, then enjoy its hanging
+              and swinging movement.
+            </p>
           </article>
+
           <article class="feature">
             <div class="feature-icon">↗</div>
             <h3>Simple by design</h3>
-            <p>A lightweight Windows app focused on a small, cheerful addition to your desktop.</p>
+            <p>
+              A lightweight Windows app focused on a small,
+              cheerful addition to your desktop.
+            </p>
           </article>
         </div>
       </section>
+
+      <!-- FREE APP -->
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">A little more to love</div>
+            <h2>Free means free.</h2>
+          </div>
+
+          <p class="section-intro">
+            Enjoy the currently available desktop application
+            without a purchase or subscription.
+          </p>
+        </div>
+
+        <div class="free-section">
+          <article class="free-card">
+            <h3>₹0. Always free.</h3>
+            <p>
+              Download and use the currently offered BK FLOATYDANGLES
+              desktop application without paying for a licence
+              or subscription.
+            </p>
+          </article>
+
+          <article class="free-card">
+            <h3>No account required</h3>
+            <p>
+              The core desktop experience does not require you
+              to create a BK FLOATYDANGLES account.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
 
       <section class="section" id="download">
         <div class="download-panel">
@@ -551,65 +866,160 @@
             <div class="eyebrow">Ready to add a little charm?</div>
             <h2>Make your screen feel yours.</h2>
             <p>
-              Click below to download BK FLOATYDANGLES version 1.0.0
-              directly from its official GitHub installer link.
+              Download BK FLOATYDANGLES version 1.0.0 directly
+              from its official GitHub installer link.
+              Completely free to download and use.
             </p>
           </div>
+
           <div class="download-side">
             <a class="pill"
-               href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/download/v1.0.0/BK.Floatydangles.Setup.1.0.0.exe"
-               download>Download installer ↓</a>
-            <span class="small-note">Windows · v1.0.0</span>
+               href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/download/v1.0.0/BK.Floatydangles.Setup.1.0.0.exe">
+              Download installer ↓
+            </a>
+
+            <span class="small-note">Windows · v1.0.0 · Free</span>
           </div>
         </div>
       </section>
+
+      <!-- FAQ -->
 
       <section class="section" id="faq">
         <div class="faq-layout">
           <div class="faq-aside">
             <div class="eyebrow">A few quick answers</div>
             <h2>Good to know.</h2>
+
             <p>
-              Have a question before you install? Start here, or visit
-              the official release page for version details.
+              Have a question before you install? Start here,
+              or visit the official release page for version details.
             </p>
+
             <a class="text-link"
                href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/tag/v1.0.0"
-               target="_blank" rel="noopener noreferrer">Open release page ↗</a>
+               target="_blank"
+               rel="noopener noreferrer">
+              Open release page ↗
+            </a>
           </div>
 
           <div class="faq-list">
+
             <details>
               <summary>What is BK FLOATYDANGLES?</summary>
-              <p>It is a Windows desktop application that lets you choose and interact with floating charm designs featuring hanging and swinging movement.</p>
+              <p>
+                It is a Windows desktop application that lets you
+                interact with floating charm designs featuring
+                hanging and swinging movement.
+              </p>
             </details>
+
+            <details>
+              <summary>Is BK FLOATYDANGLES completely free?</summary>
+              <p>
+                Yes! The currently offered desktop application is
+                completely free to download and use. There is no
+                paid subscription or purchase required.
+              </p>
+            </details>
+
             <details>
               <summary>How do I download it?</summary>
-              <p>Click any Download button to start downloading the Windows installer directly. If it does not start, visit the official release page and check its Assets section.</p>
+              <p>
+                Click any Download button to download the Windows
+                installer directly. You can also visit the official
+                GitHub release page and check its Assets section.
+              </p>
             </details>
+
             <details>
               <summary>How do I install the app?</summary>
-              <p>Download the installer, open it, and follow the installation steps. Review any Windows security warnings carefully before continuing.</p>
+              <p>
+                Download the installer, open it, and follow the
+                installation steps. Review any Windows security
+                warnings carefully before continuing.
+              </p>
             </details>
+
             <details>
               <summary>Why might Windows show a security warning?</summary>
-              <p>The installer is not digitally signed. A warning is not proof that a file is malicious, nor proof that it is safe. Review the source and warning before deciding.</p>
+              <p>
+                The installer is not digitally signed. A warning
+                is not proof that a file is malicious, nor proof
+                that it is safe. Review the source and warning
+                before deciding whether to continue.
+              </p>
             </details>
+
             <details>
-              <summary>Does it need an account?</summary>
-              <p>An account is not required for the core desktop experience. This does not guarantee that every aspect of device or application activity is private.</p>
+              <summary>Does the app need an account?</summary>
+              <p>
+                An account is not required for the core desktop
+                experience. Read our Privacy Policy for information
+                about the app and website's privacy practices.
+              </p>
             </details>
+
+            <details>
+              <summary>How can I share feedback?</summary>
+              <p>
+                Visit our Feedback page to send suggestions or
+                report problems. Providing an email address is
+                optional. Feedback is stored to help improve
+                the project.
+              </p>
+              <p>
+                <a href="feedback.html">Open the Feedback page →</a>
+              </p>
+            </details>
+
+            <details>
+              <summary>Where can I read the Privacy Policy?</summary>
+              <p>
+                Our Privacy Policy explains the information
+                handling practices of the desktop application
+                and website, including feedback and third-party
+                services.
+              </p>
+              <p>
+                <a href="privacy.html">Read the Privacy Policy →</a>
+              </p>
+            </details>
+
             <details>
               <summary>Where can I report a bug?</summary>
-              <p>Visit the official GitHub repository and use its available contact or issue options to share feedback with the developer.</p>
+              <p>
+                You can use the website Feedback page or visit
+                the official GitHub repository for available
+                issue and project information.
+              </p>
             </details>
+
           </div>
         </div>
       </section>
 
+      <!-- FOOTER -->
+
       <footer class="footer">
-        <div><strong>BK FLOATYDANGLES</strong><br>A little charm for your everyday screen.</div>
-        <div>Created by Balakrishna · © 2026</div>
+        <div>
+          <strong>BK FLOATYDANGLES</strong><br>
+          A little charm for your everyday screen.<br>
+          Completely free to download and use.
+        </div>
+
+        <div>
+          Created by Balakrishna · © 2026
+
+          <div class="footer-links">
+            <a href="feedback.html">Feedback</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="https://github.com/BalakrishnaWorks/bk-floatydangles/releases/tag/v1.0.0"
+               target="_blank"
+               rel="noopener noreferrer">GitHub Releases</a>
+          </div>
+        </div>
       </footer>
 
     </div>
