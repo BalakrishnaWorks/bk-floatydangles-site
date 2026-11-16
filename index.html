@@ -539,20 +539,38 @@
 
     /* Download guide images */
 
+/* Installation guide */
+
+.download-guide {
+  padding: 55px 0;
+  border-top: 1px solid var(--line);
+}
+
+.download-guide h2 {
+  margin: 0 0 28px;
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -.055em;
+}
+
 .download-guide-images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .download-guide-images img {
-  display: block;
   width: 100%;
-  max-width: 750px;
   height: auto;
+  display: block;
   border: 1px solid var(--line);
   border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .download-guide-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
 }
     /* Tablet */
 
@@ -750,14 +768,20 @@
 
       <!-- DOWNLOAD GUIDE IMAGES -->
 
-<section class="section" id="download-guide">
+<!-- INSTALLATION GUIDE -->
+
+<section class="download-guide" id="download-guide">
+
+  <h2>How to Install?</h2>
+
   <div class="download-guide-images">
-    <img src="assets/step1.png" alt="Download guide image 1">
-    <img src="assets/step2.png" alt="Download guide image 2">
-    <img src="assets/step3.png" alt="Download guide image 3">
-    <img src="assets/step4.png" alt="Download guide image 4">
-    <img src="assets/step5.png" alt="Download guide image 5">
+    <img src="assets/step1.png" alt="Installation step 1">
+    <img src="assets/step2.png" alt="Installation step 2">
+    <img src="assets/step3.png" alt="Installation step 3">
+    <img src="assets/step4.png" alt="Installation step 4">
+    <img src="assets/step5.png" alt="Installation step 5">
   </div>
+
 </section>
 
       <!-- THOUGHTFUL DESIGN / SAFETY INFORMATION -->
