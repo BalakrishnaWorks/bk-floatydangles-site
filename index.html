@@ -540,19 +540,20 @@
     /* Download guide images */
 
 .download-guide-images {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .download-guide-images img {
   display: block;
   width: 100%;
+  max-width: 750px;
   height: auto;
   border: 1px solid var(--line);
   border-radius: 5px;
 }
-
     /* Tablet */
 
     @media (max-width: 900px) {
