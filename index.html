@@ -555,15 +555,38 @@
 .download-guide-images {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
-.download-guide-images img {
+.install-step {
+  min-width: 0;
+  padding: 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--lavender);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(70, 50, 120, 0.06);
+}
+
+.install-step h3 {
+  margin: 0 0 9px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.install-step p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.install-step img {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid var(--line);
-  border-radius: 5px;
+  border: 1px solid var(--lavender);
+  border-radius: 8px;
 }
 
 @media (max-width: 600px) {
@@ -774,13 +797,39 @@
 
   <h2>How to Install?</h2>
 
-  <div class="download-guide-images">
+ <div class="download-guide-images">
+
+  <div class="install-step">
+    <h3>Download the Installer</h3>
+    <p>Click the <strong>Download for Windows</strong> button to save the <code>BK-FLOATYDANGLES</code> setup file to your computer.</p>
     <img src="assets/step1.png" alt="Installation step 1">
+  </div>
+
+  <div class="install-step">
+    <h3>Open the Setup File</h3>
+    <p>Go to your <strong>Downloads</strong> folder and double-click the installer file to begin.</p>
     <img src="assets/step2.png" alt="Installation step 2">
+  </div>
+
+  <div class="install-step">
+    <h3>Review the Windows Warning</h3>
+    <p>If Windows shows a <em>"Windows protected your PC"</em> alert, click <strong>More info</strong> and then select <strong>Run anyway</strong>.</p>
     <img src="assets/step3.png" alt="Installation step 3">
+  </div>
+
+  <div class="install-step">
+    <h3>Click "Run anyway":</h3>
+    <p>After clicking <em>More info</em>, select the <strong>Run anyway</strong> button at the bottom of the Windows SmartScreen prompt to start the installer.</p>
     <img src="assets/step4.png" alt="Installation step 4">
+  </div>
+
+  <div class="install-step">
+    <h3>Install and Launch:</h3>
+    <p>Follow the on-screen setup prompts to finish installing BK FLOATYDANGLES, then open the app from your desktop or Start menu to pick and drag your favorite charm onto your screen.</p>
     <img src="assets/step5.png" alt="Installation step 5">
   </div>
+
+</div>
 
 </section>
 
