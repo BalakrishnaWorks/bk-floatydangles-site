@@ -1,5 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Sitemap: https://floatydangles.in/sitemap.xml
+Sitemap: https://www.floatydangles.in/sitemap.xml
